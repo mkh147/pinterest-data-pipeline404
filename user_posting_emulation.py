@@ -48,7 +48,7 @@ def run_infinite_post_data_loop():
                 }
             ]
         }, default=str)
-        response = requests.request("POST", api_url, headers=headers, data=payload)
+        response = requests.request("POST", api_url, headers=headers, data=data)
         if response.status_code != 200:
             print(f"Failed to send data to {topic}. Status code: {response.status_code}")
         else:
