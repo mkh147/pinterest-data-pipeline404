@@ -107,13 +107,14 @@ def run_infinite_post_data_loop():
             
             topics = ["user_id.pin", "replace.geo", "replace.user"]
 
-            #url = 'https://j0itaq5qpg.execute-api.us-east-1.amazonaws.com/dev/topics/0e1a30bcc1ff.pin'
+            url = 'https://j0itaq5qpg.execute-api.us-east-1.amazonaws.com/dev/topics/0e1a30bcc1ff.pin'
             url1 = 'https://j0itaq5qpg.execute-api.us-east-1.amazonaws.com/dev/topics/0e1a30bcc1ff.geo'
             url2 = 'https://j0itaq5qpg.execute-api.us-east-1.amazonaws.com/dev/topics/0e1a30bcc1ff.user'
 
-            #ps = send_data_to_topic(url, topics[0], pin_res)
+            ps = send_data_to_topic(url, topics[0], pin_res)
             ps1 = send_data_to_topic(url1, topics[1], geo_res)
             ps2 = send_data_to_topic(url2, topics[2], user_res)
+            print(ps.status_code)
             print(ps1.status_code)
             print(ps2.status_code)
 
